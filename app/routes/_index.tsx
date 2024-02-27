@@ -18,9 +18,7 @@ export default function Index() {
         lineHeight: "1.8",
       }}
     >
-      <h1 className="text-red-500">
-        Welcome to Remixxxxxxxa sñdlkfaj sñld fjasñlkd fjañlsdj fñlksa jdfñlksaj dñlksa{" "}
-      </h1>
+      <h1>Welcome to Remixxxxxxxa sñdlkfaj sñld fjasñlkd fjañlsdj fñlksa jdfñlksaj dñlksa </h1>
       <ul>
         <li>
           <a target="_blank" href="https://remix.run/tutorials/blog" rel="noreferrer">
