@@ -17,6 +17,7 @@ export default function Index() {
             target="_blank"
             href="https://remix.run/tutorials/blog"
             rel="noreferrer"
+            className="text-red-500 text-3xl font-bold underline"
           >
             15m Quickstart Blog Tutorial
           </a>
