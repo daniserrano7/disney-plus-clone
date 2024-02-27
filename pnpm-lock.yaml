@@ -16,9 +16,6 @@ dependencies:
   isbot:
     specifier: ^4.1.0
     version: 4.1.0
-  prettier:
-    specifier: ^3.2.5
-    version: 3.2.5
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -29,7 +26,7 @@ dependencies:
 devDependencies:
   '@remix-run/dev':
     specifier: ^2.7.2
-    version: 2.7.2(@remix-run/serve@2.7.2)(typescript@5.1.6)
+    version: 2.7.2(@remix-run/serve@2.7.2)(typescript@5.1.6)(vite@5.1.4)
   '@types/react':
     specifier: ^18.2.20
     version: 18.2.20
@@ -57,9 +54,15 @@ devDependencies:
   eslint-plugin-react-hooks:
     specifier: ^4.6.0
     version: 4.6.0(eslint@8.38.0)
+  prettier:
+    specifier: ^3.2.5
+    version: 3.2.5
   typescript:
     specifier: ^5.1.6
     version: 5.1.6
+  vite:
+    specifier: ^5.1.4
+    version: 5.1.4
 
 packages:
 
@@ -1020,7 +1023,7 @@ packages:
     engines: {node: '>=18.0.0'}
     dev: false
 
-  /@remix-run/dev@2.7.2(@remix-run/serve@2.7.2)(typescript@5.1.6):
+  /@remix-run/dev@2.7.2(@remix-run/serve@2.7.2)(typescript@5.1.6)(vite@5.1.4):
     resolution: {integrity: sha512-ejxzcQY5DFl1CNG5+5+y0UeklOqkRBO43lAPnSC8ITLigjZY6UZsBENlex/Y+xJzjIUtaRBxc7mVaWa62FDQOg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
@@ -1093,6 +1096,7 @@ packages:
       tar-fs: 2.1.1
       tsconfig-paths: 4.2.0
       typescript: 5.1.6
+      vite: 5.1.4
       ws: 7.5.9
     transitivePeerDependencies:
       - '@types/node'
@@ -4934,7 +4938,7 @@ packages:
     resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
     engines: {node: '>=14'}
     hasBin: true
-    dev: false
+    dev: true
 
   /pretty-ms@7.0.1:
     resolution: {integrity: sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q==}
