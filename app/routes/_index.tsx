@@ -12,12 +12,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div
-      style={{
-        fontFamily: "system-ui, sans-serif",
-        lineHeight: "1.8",
-      }}
-    >
+    <div>
       <h1>Welcome to Remixxxxxxxa sñdlkfaj sñld fjasñlkd fjañlsdj fñlksa jdfñlksaj dñlksa </h1>
       <ul>
         <li>
@@ -26,7 +21,12 @@ export default function Index() {
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://remix.run/tutorials/jokes" rel="noreferrer">
+          <a
+            className="font-primary"
+            target="_blank"
+            href="https://remix.run/tutorials/jokes"
+            rel="noreferrer"
+          >
             Deep Dive Jokes App Tutorial
           </a>
         </li>

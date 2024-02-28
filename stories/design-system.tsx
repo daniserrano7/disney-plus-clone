@@ -1,7 +1,7 @@
 export const DesignSystem = () => {
   return (
     <div className="p-4 space-y-2">
-      <h1>Colors</h1>
+      <h1 className="font-h1">Colors</h1>
       <h2>Font</h2>
       <div className="flex items-center gap-3">
         <div className="bg-font w-16 h-12 rounded-md border-2 border-white" />

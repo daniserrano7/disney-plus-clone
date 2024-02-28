@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .font-h1 {
+    @apply text-[44px] leading-5 font-bold text-font;
+  }
+
+  .font-h2 {
+    @apply text-[20px] leading-6 font-bold text-font;
+  }
+
+  @font-face {
+    font-family: "AvenirNextWorldDemi";
+    src: url("../public/fonts/avenir-next-world-demi.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    ffont-display: swap;
+  }
+}

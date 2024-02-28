@@ -1,11 +1,5 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
-import './styles.css' 
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
+import "./styles.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,7 +10,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="font-primary">
         {children}
         <ScrollRestoration />
         <Scripts />
