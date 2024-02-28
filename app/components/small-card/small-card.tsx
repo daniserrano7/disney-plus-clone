@@ -2,7 +2,7 @@ export const SmallCard = ({ url, img, alt }: Props) => {
   return (
     <a
       href={url}
-      className="w-[240px] h-[135px] outline outline-0 hover:outline-[3px] hover:outline-border hover:outline-offset-[3px] rounded shadow-card hover:scale-105 ease-out transition-transform duration-300"
+      className="block h-[135px] w-[240px] rounded shadow-card outline outline-0 transition-transform duration-300 ease-out hover:scale-105 hover:outline-[3px] hover:outline-offset-[3px] hover:outline-border"
     >
       <img src={img} alt={alt} className="rounded" />
     </a>
