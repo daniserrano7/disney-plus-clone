@@ -21,7 +21,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div style={{ color: "#f9f9f9" }}>
+      <div style={{ color: "#f9f9f9", backgroundColor: "#1a1d29" }}>
         <Story />
       </div>
     ),
