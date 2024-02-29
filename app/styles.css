@@ -3,18 +3,30 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply font-primary;
+  }
+
   .font-h1 {
-    @apply text-[44px] leading-5 font-bold text-font;
+    @apply text-[44px] font-bold text-font;
   }
 
   .font-h2 {
-    @apply text-[20px] leading-6 font-bold text-font;
+    @apply text-[20px] font-bold leading-6 text-font;
   }
 
   @font-face {
-    font-family: "AvenirNextWorldDemi";
-    src: url("../public/fonts/avenir-next-world-demi.otf") format("opentype");
+    font-family: "AvenirWorldForDisneyRegular";
+    src: url("../public/fonts/avenir-world-for-disney-regular.woff2") format("woff2");
     font-weight: normal;
+    font-style: normal;
+    ffont-display: swap;
+  }
+
+  @font-face {
+    font-family: "AvenirWorldForDisneyDemi";
+    src: url("../public/fonts/avenir-world-for-disney-demi.woff2") format("woff2");
+    font-weight: bold;
     font-style: normal;
     ffont-display: swap;
   }
