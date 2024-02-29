@@ -34,6 +34,12 @@ module.exports = {
         "plugin:react-hooks/recommended",
         "plugin:jsx-a11y/recommended",
       ],
+      rules: {
+        "react/prop-types": "off",
+        "react/display-name": "off",
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+      },
       settings: {
         react: {
           version: "detect",
@@ -55,7 +61,7 @@ module.exports = {
       plugins: ["@typescript-eslint", "import"],
       parser: "@typescript-eslint/parser",
       settings: {
-        "import/internal-regex": "^~/",
+        "import/internal-regex": "^@/",
         "import/resolver": {
           node: {
             extensions: [".ts", ".tsx"],
@@ -70,6 +76,9 @@ module.exports = {
         "plugin:import/recommended",
         "plugin:import/typescript",
       ],
+      rules: {
+        "@typescript-eslint/no-unused-vars": "warn",
+      },
     },
 
     // Node
@@ -80,4 +89,8 @@ module.exports = {
       },
     },
   ],
+  rules: {
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/consistent-type-imports": "off",
+  },
 };

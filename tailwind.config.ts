@@ -32,6 +32,7 @@ export default {
     borderRadius: {
       DEFAULT: "4px",
       lg: "8px",
+      xl: "10px",
     },
     extend: {
       boxShadow: {

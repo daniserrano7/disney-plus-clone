@@ -10,6 +10,9 @@ dependencies:
   '@remix-run/serve':
     specifier: ^2.7.2
     version: 2.7.2(typescript@5.1.6)
+  classix:
+    specifier: ^2.1.36
+    version: 2.1.36
   isbot:
     specifier: ^4.1.0
     version: 4.1.0
@@ -5441,6 +5444,10 @@ packages:
     dependencies:
       consola: 3.2.3
     dev: true
+
+  /classix@2.1.36:
+    resolution: {integrity: sha512-1glwI9Ho7s/Z5vqCNLj3eYU+17A9KHjLREcmzJUmZS+GnXBgS1/or5fzqhB5b59jsPxazONrajM5d9hgJgnnlA==}
+    dev: false
 
   /clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
