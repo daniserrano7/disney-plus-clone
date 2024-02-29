@@ -37,10 +37,4 @@ const meta: Meta<typeof BrandCardDisney> = {
 export default meta;
 type Story = StoryObj<typeof BrandCardDisney>;
 
-export const Default: Story = {
-  args: {},
-};
-
-export const Disney: Story = {
-  args: {},
-};
+export const Default: Story = {};
