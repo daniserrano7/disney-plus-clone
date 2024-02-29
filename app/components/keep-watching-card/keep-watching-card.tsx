@@ -21,7 +21,7 @@ export const KeepWatchingCard = ({
       <div className="bg-black/70 absolute top-0 flex h-full w-full flex-col justify-between rounded px-4 pb-[26px] pt-2.5 opacity-0 duration-300 ease-in-out hover:opacity-100">
         <div>
           <p className={cx("text-sm", !categoryTitle && "hidden")}>{categoryTitle}</p>
-          <h5 className="text-xl">{title}</h5>
+          <h5 className="text-xl font-bold">{title}</h5>
         </div>
         <div className="mt-4 flex items-center justify-between">
           <div className="-mb-4 flex gap-4 transition-all duration-300 ease-out group-hover:mb-0">
