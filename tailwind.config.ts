@@ -16,7 +16,8 @@ export default {
         },
         elevation: {
           surface: "#1a1d29",
-          overlay: "#31343e",
+          // overlay: "#31343e",
+          overlay: "#131313",
         },
         background: {
           neutral: "#40424a",
@@ -29,6 +30,7 @@ export default {
         border: {
           DEFAULT: "#f9f9f9",
           subtle: "rgba(249, 249, 249, 0.2)",
+          subtler: "rgba(249, 249, 249, 0.1)",
         },
       },
       borderRadius: {
@@ -38,6 +40,7 @@ export default {
       },
       boxShadow: {
         card: "rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px",
+        overlay: "rgba(0, 0, 0, 0.5) 0px 0px 18px 0px",
       },
     },
   },

@@ -2,7 +2,7 @@ import { FaHouse, FaMagnifyingGlass, FaPlus, FaStar } from "react-icons/fa6";
 import { PiFilmReelFill, PiTelevisionFill } from "react-icons/pi";
 import cx from "classix";
 import logo from "public/images/logo.svg";
-import avatar from "public/images/avatar.png";
+import { UserProfile } from "./user-profile";
 
 export const Header = () => {
   return (
@@ -11,9 +11,9 @@ export const Header = () => {
         background:
           "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.03) 15%, rgba(0, 0, 0, 0.125) 30%, rgba(0, 0, 0, 0.25) 46%, rgba(0, 0, 0, 0.4) 61%, rgba(0, 0, 0, 0.553) 75%, rgba(0, 0, 0, 0.694) 88%, rgba(0, 0, 0, 0.8))",
       }}
-      className="flex h-[72px] w-full items-center justify-between pl-[36px] pr-[20px]"
+      className="relative flex h-[72px] w-full items-center pl-[36px] pr-[20px]"
     >
-      <a href="/" className="block min-h-[48px] min-w-[79px]">
+      <a href="/" className="mr-8 block min-h-[48px] min-w-[79px]">
         <img src={logo} alt="Logo" width={79} height={48} />
       </a>
       <ul className="flex list-none">
@@ -54,9 +54,7 @@ export const Header = () => {
           <ListItemText>Series</ListItemText>
         </ListItem>
       </ul>
-      <div>
-        <img src={avatar} alt="Avatar" width={48} height={48} className="h-[48px] w-[48px]" />
-      </div>
+      <UserProfile />
     </header>
   );
 };
