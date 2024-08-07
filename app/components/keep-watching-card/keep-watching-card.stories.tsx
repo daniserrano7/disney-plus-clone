@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { KeepWatchingCard } from "./keep-watching-card";
 
 const meta: Meta<typeof KeepWatchingCard> = {
-  title: "Components/KeepWatchingCard",
+  title: "Components/Keep Watching Card",
   parameters: {
     layout: "centered",
   },

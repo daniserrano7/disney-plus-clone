@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { HeroCard } from "./hero-card";
 
 const meta: Meta<typeof HeroCard> = {
-  title: "Components/HeroCard",
+  title: "Components/Hero Card",
   parameters: {
     layout: "centered",
   },
