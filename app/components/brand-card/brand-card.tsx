@@ -15,9 +15,9 @@ const BrandCardBase = ({ url, img, alt, video }: Props) => {
   return (
     <a
       href={url}
-      className="rounded-xl group relative block aspect-video h-full bg-elevation-surface bg-gradient-to-b from-elevation-overlay to-elevation-surface shadow-card outline outline-0 transition-transform duration-300 ease-out hover:scale-105 hover:outline-[3px] hover:outline-offset-[3px] hover:outline-border"
+      className="from-elevation-raised to-[rgb(30 31 42)] group relative block aspect-video h-full rounded-xl bg-elevation-surface bg-gradient-to-b shadow-card outline outline-0 transition-transform duration-300 ease-out hover:scale-105 hover:outline-[3px] hover:outline-offset-[3px] hover:outline-border"
     >
-      <img src={img} alt={alt} className="rounded-xl absolute top-0 z-10 h-full w-full" />
+      <img src={img} alt={alt} className="absolute top-0 z-10 h-full w-full rounded-xl" />
       <video
         autoPlay
         loop
@@ -25,7 +25,7 @@ const BrandCardBase = ({ url, img, alt, video }: Props) => {
         preload="auto"
         width="320"
         height="240"
-        className="rounded-xl absolute top-0 z-0 h-full w-full opacity-0 group-hover:opacity-100"
+        className="absolute top-0 z-0 h-full w-full rounded-xl opacity-0 group-hover:opacity-100"
       >
         <source src={video} type="video/mp4" />
       </video>

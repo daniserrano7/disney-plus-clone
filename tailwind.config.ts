@@ -16,7 +16,7 @@ export default {
         },
         elevation: {
           surface: "#1a1d29",
-          // overlay: "#31343e",
+          raised: "#31343e",
           overlay: "#131313",
         },
         background: {
