@@ -9,7 +9,7 @@ import {
 } from "./brand-card";
 
 const meta: Meta<typeof BrandCardDisney> = {
-  title: "Components/Brand Card",
+  title: "Components/Brand Cards/Individual",
   parameters: {
     layout: "centered",
   },
@@ -18,25 +18,6 @@ const meta: Meta<typeof BrandCardDisney> = {
 
 export default meta;
 type Story = StoryObj<typeof BrandCardDisney>;
-
-export const Default: Story = {
-  render: () => (
-    <div className="grid grid-cols-2 gap-8 rounded-lg p-8">
-      {[
-        BrandCardDisney,
-        BrandCardPixar,
-        BrandCardMarvel,
-        BrandCardNationalGeographic,
-        BrandCardStarWars,
-        BrandCardStar,
-      ].map((BrandCardStory, index) => (
-        <div key={index} className="h-[120px]">
-          <BrandCardStory />
-        </div>
-      ))}
-    </div>
-  ),
-};
 
 export const Disney: Story = {
   render: () => (

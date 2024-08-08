@@ -15,7 +15,7 @@ const BrandCardBase = ({ url, img, alt, video }: Props) => {
   return (
     <a
       href={url}
-      className="from-elevation-raised to-[rgb(30 31 42)] group relative block aspect-video h-full rounded-xl bg-elevation-surface bg-gradient-to-b shadow-card outline outline-0 transition-transform duration-300 ease-out hover:scale-105 hover:outline-[3px] hover:outline-offset-[3px] hover:outline-border"
+      className="to-[rgb(30 31 42)] group relative block aspect-video h-full rounded-xl bg-elevation-surface bg-gradient-to-b from-elevation-raised shadow-card outline outline-0 transition-transform duration-300 ease-out hover:scale-105 hover:outline-[3px] hover:outline-offset-[3px] hover:outline-border"
     >
       <img src={img} alt={alt} className="absolute top-0 z-10 h-full w-full rounded-xl" />
       <video
