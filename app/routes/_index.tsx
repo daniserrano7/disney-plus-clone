@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Header } from "@/components/header";
 import { HeroCarrousel } from "@/components/hero";
+import { heroCardMock } from "@/components/hero/hero-card";
 
 export const meta: MetaFunction = () => {
   return [
@@ -16,7 +17,7 @@ export default function Index() {
   return (
     <div>
       <Header />
-      <HeroCarrousel />
+      <HeroCarrousel cards={[heroCardMock, heroCardMock, heroCardMock]} />
     </div>
   );
 }

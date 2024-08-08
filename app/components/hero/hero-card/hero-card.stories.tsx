@@ -3,7 +3,7 @@ import { HeroCard } from "./hero-card";
 import { heroCardMock } from "./hero-card.mock";
 
 const meta: Meta<typeof HeroCard> = {
-  title: "Components/Hero Card",
+  title: "Components/Hero/Card",
   parameters: {
     layout: "centered",
   },

@@ -1,16 +1,16 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import cx from "classix";
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
-import { HeroCard, heroCardMock } from "./hero-card";
+import { HeroCard, Props as HeroCardProps } from "./hero-card";
 
-export const HeroCarrousel = () => {
+export const HeroCarrousel = ({ cards }: Props) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   const nextSlide = () => setCurrentStep((prev) => prev + 1);
   const previousSlide = () => setCurrentStep((prev) => prev - 1);
 
-  const cards = useMemo(() => [heroCardMock, heroCardMock, heroCardMock], []);
+  // const cards = useMemo(() => [heroCardMock, heroCardMock, heroCardMock], []);
   const CARDS_SPACING = 24; // gap between cards
   const SIDE_MARGIN = 144; // margin on the sides, part of the previous/next slide shown
   const ANIMATION_DURATION_SECONDS = 1;
@@ -103,3 +103,7 @@ export const HeroCarrousel = () => {
     </div>
   );
 };
+
+interface Props {
+  cards: HeroCardProps[];
+}
