@@ -7,12 +7,17 @@
     @apply font-primary;
   }
 
+  html {
+    @apply text-font;
+    @apply bg-elevation-surface;
+  }
+
   .font-h1 {
-    @apply text-[44px] font-bold text-font;
+    @apply font-bold text-[44px] text-font;
   }
 
   .font-h2 {
-    @apply text-[20px] font-bold leading-6 text-font;
+    @apply font-bold text-[20px] leading-6 text-font;
   }
 
   @font-face {
