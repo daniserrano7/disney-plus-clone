@@ -10,7 +10,6 @@ export const HeroCarrousel = ({ cards }: Props) => {
   const nextSlide = () => setCurrentStep((prev) => prev + 1);
   const previousSlide = () => setCurrentStep((prev) => prev - 1);
 
-  // const cards = useMemo(() => [heroCardMock, heroCardMock, heroCardMock], []);
   const CARDS_SPACING = 24; // gap between cards
   const SIDE_MARGIN = 144; // margin on the sides, part of the previous/next slide shown
   const ANIMATION_DURATION_SECONDS = 1;
@@ -37,6 +36,7 @@ export const HeroCarrousel = ({ cards }: Props) => {
 
   return (
     <div className="relative w-full overflow-x-hidden">
+      {/* Spacer element */}
       <div
         style={{ width: `calc(100% - ${SIDE_MARGIN}px)` }}
         className="relative mx-auto aspect-[3.91] h-auto"
