@@ -8,15 +8,22 @@ export const keepWatchingCardMovieMock: KeepWatchingCardProps = {
   infoUrl: "https://www.disneyplus.com/",
   remainingTime: 32,
   progress: 0.5,
+  info: {
+    pegi: "18+",
+    year: "2021",
+    tags: ["Action", "Adventure"],
+  },
 };
 
 export const keepWatchingCardSerieMock: KeepWatchingCardProps = {
   img: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/CB389A0D5C9087462D079DAC0BD1A22CBB898C21F9A7A41C84E6EDC461B50EE9/scale?width=400&aspectRatio=1.78&format=jpeg",
   alt: "Ron's Gone Wrong",
   title: "Ron's Gone Wrong",
-  categoryTitle: "Animation",
   playUrl: "https://www.disneyplus.com/",
   infoUrl: "https://www.disneyplus.com/",
-  remainingTime: 32,
-  progress: 0.27,
+  info: {
+    pegi: "18+",
+    year: "2021",
+    tags: ["Action", "Adventure"],
+  },
 };

@@ -1,50 +1,56 @@
-import cx from "classix";
-import { PiPlayFill } from "react-icons/pi";
-import { TiInfoLarge } from "react-icons/ti";
+import { FaPlay } from "react-icons/fa6";
+import { Pegi } from "@/components/pegi";
 
 export const KeepWatchingCard = ({
   img,
   alt,
   title,
-  categoryTitle,
   playUrl,
   infoUrl,
   remainingTime,
   progress,
+  info,
 }: Props) => {
+  const remainingTimeText = remainingTime
+    ? `${remainingTime} minutes remaining`
+    : "Watch next episode";
+
   return (
-    <a
-      href={playUrl}
-      className="group relative block aspect-video rounded shadow-card outline outline-0 transition-transform duration-300 ease-out hover:scale-105 hover:outline-[3px] hover:outline-offset-[3px] hover:outline-border"
-    >
-      <img src={img} alt={alt} className="rounded" />
-      <div className="absolute top-0 flex h-full w-full flex-col justify-between rounded bg-black/70 px-4 pb-[26px] pt-2.5 opacity-0 duration-300 ease-in-out hover:opacity-100">
-        <div>
-          <p className={cx("text-sm", !categoryTitle && "hidden")}>{categoryTitle}</p>
-          <h5 className="font-bold text-xl">{title}</h5>
+    <div>
+      <a href={playUrl} className="group relative block">
+        <div className="aspect-video rounded shadow-card outline outline-0 transition-transform duration-300 ease-out group-hover:scale-105 group-hover:outline-[3px] group-hover:outline-offset-[3px] group-hover:outline-border">
+          <img src={img} alt={alt} className="rounded" />
+          {progress ? (
+            <div
+              role="progressbar"
+              className="absolute bottom-2 left-2 mx-auto h-[5px] w-[calc(100%-16px)] appearance-none rounded-full bg-white bg-opacity-30"
+            >
+              <div
+                style={{ width: `${progress * 100}px` }}
+                className="bg-background-action h-full rounded-full"
+              />
+            </div>
+          ) : null}
         </div>
-        <div className="mt-4 flex items-center justify-between">
-          <div className="-mb-4 flex gap-4 transition-all duration-300 ease-out group-hover:mb-0">
-            <ActionButtonLink url={playUrl}>
-              <PiPlayFill size={12} />
-            </ActionButtonLink>
-            <ActionButtonLink url={infoUrl}>
-              <TiInfoLarge size={18} className="ml-[1px]" />
-            </ActionButtonLink>
+        <span className="absolute left-1/2 top-1/2 grid h-[42px] w-[42px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white opacity-0 transition-opacity duration-200 ease-linear group-hover:opacity-100">
+          <FaPlay size={20} className="ml-1 fill-black" />
+        </span>
+      </a>
+      <a href={infoUrl} className="group">
+        <p className="relative mt-4 text-xs text-font-subtlest transition-all duration-200 ease-linear group-hover:text-font">
+          {remainingTimeText}
+        </p>
+        <p className="mt-1 font-bold text-lg text-font-subtle transition-all duration-200 ease-linear group-hover:text-font">
+          {title}
+        </p>
+        <div className="mt-1 flex items-center gap-2">
+          <Pegi value={info.pegi} />
+          <div className="flex gap-2 text-xs text-font-subtlest">
+            <span>{info.year}</span> <span>•</span> <span>{info.tags.join(", ")}</span>
           </div>
-          <p className="text-xs text-font-subtle">{remainingTime} min left</p>
         </div>
-      </div>
-      <div
-        role="progressbar"
-        className="absolute bottom-0 left-0 h-[6px] w-full appearance-none rounded-b bg-white/30 transition-all duration-300 ease-out group-hover:bottom-3 group-hover:left-4 group-hover:w-[calc(100%-32px)]"
-      >
-        <div
-          style={{ width: `${progress * 100}px` }}
-          className="h-full rounded-bl bg-cyan-400"
-        ></div>
-      </div>
-    </a>
+      </a>
+    </div>
   );
 };
 
@@ -52,25 +58,13 @@ export interface Props {
   img: string;
   alt: string;
   title: string;
-  categoryTitle?: string;
   playUrl: string;
   infoUrl: string;
-  remainingTime: number;
-  progress: number;
-}
-
-const ActionButtonLink = ({ url, children }: ActionButtonLink) => {
-  return (
-    <a
-      href={url}
-      className="grid h-[25px] w-[25px] place-items-center rounded-full border-2 border-border bg-black/70 transition-transform duration-100 ease-in-out hover:scale-125"
-    >
-      {children}
-    </a>
-  );
-};
-
-interface ActionButtonLink {
-  url: string;
-  children: React.ReactNode;
+  remainingTime?: number;
+  progress?: number;
+  info: {
+    pegi: string;
+    year: string;
+    tags: string[];
+  };
 }

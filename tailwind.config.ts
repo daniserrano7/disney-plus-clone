@@ -27,6 +27,7 @@ export default {
           interaction: "rgba(182, 182, 182, 0.2)",
           "interaction-hovered": "rgba(0, 0, 0, 0.4)",
           "interaction-pressed": "rgba(0, 0, 0, 0.8)",
+          action: "#3EABFF",
         },
         border: {
           DEFAULT: "#f9f9f9",
@@ -40,7 +41,8 @@ export default {
         xl: "10px",
       },
       boxShadow: {
-        card: "rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px",
+        // card: "rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px",
+        card: "0px 20px 24px 0px rgba(0, 0, 0, 0.80)",
         overlay: "rgba(0, 0, 0, 0.5) 0px 0px 18px 0px",
       },
     },

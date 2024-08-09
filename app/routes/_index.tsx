@@ -30,7 +30,7 @@ export default function Index() {
       <div className="mt-8 px-[72px]">
         <BrandCards />
       </div>
-      {/* <div className="mt-12">
+      <div className="mt-12">
         <SectionWithTitle title="Nuevo en Disney +">
           <SmallCardsCarrousel
             cards={[
@@ -81,7 +81,7 @@ export default function Index() {
             ]}
           />
         </SectionWithTitle>
-      </div> */}
+      </div>
     </div>
   );
 }

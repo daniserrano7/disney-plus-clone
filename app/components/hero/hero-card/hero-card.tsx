@@ -1,4 +1,5 @@
 import cx from "classix";
+import { Pegi } from "@/components/pegi";
 
 export const HeroCard = ({
   img,
@@ -24,7 +25,7 @@ export const HeroCard = ({
           alt={alt}
           className={cx(
             "aspect-video h-[55%] w-fit transition-all delay-[1.2s] duration-[0.6s] ease-out",
-            displayStatus === "visible" ? "ml-0 opacity-100" : "-ml-[24px] opacity-0",
+            displayStatus === "visible" ? "ml-0 opacity-100" : "-ml-[48px] opacity-0",
           )}
         />
         <div
@@ -43,7 +44,7 @@ export const HeroCard = ({
           </p>
           {info ? (
             <div className="flex items-center gap-2">
-              <Pegi pegi={info.pegi} />
+              <Pegi value={info.pegi} />
               <div className="flex gap-1 text-xs text-font-subtlest">
                 <span>{info.year}</span> <span>•</span> <span>{info.tags.join(", ")}</span>
               </div>
@@ -52,14 +53,6 @@ export const HeroCard = ({
         </div>
       </div>
     </div>
-  );
-};
-
-const Pegi = ({ pegi }: { pegi: string }) => {
-  return (
-    <span className="flex w-fit items-center justify-center rounded-sm bg-background-neutral px-1 py-0.5 font-bold text-xs">
-      {pegi}
-    </span>
   );
 };
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import cx from "classix";
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
 
-export const GroupCardsCarrousel = <T,>({ cards, renderCard }: Props<T>) => {
+export const GroupCardsCarrousel = <T,>({ cards, component: Component }: Props<T>) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const CARDS_SPACING = 24; // gap between cards
@@ -78,7 +78,10 @@ export const GroupCardsCarrousel = <T,>({ cards, renderCard }: Props<T>) => {
           }}
           className="absolute grid h-auto grid-cols-4 gap-4 ease-out"
         >
-          {cards.map((card, index) => renderCard(card, index))}
+          {/* {cards.map((card, index) => renderCard(card, index))} */}
+          {cards.map((card, index) => (
+            <Component key={index} {...card} />
+          ))}
         </div>
       ))}
     </div>
@@ -87,5 +90,6 @@ export const GroupCardsCarrousel = <T,>({ cards, renderCard }: Props<T>) => {
 
 interface Props<T> {
   cards: T[];
-  renderCard: (card: T, index: number) => React.ReactNode;
+  component: React.ComponentType<T>;
+  // renderCard: (card: T, index: number) => React.ReactNode;
 }
