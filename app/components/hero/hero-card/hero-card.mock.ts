@@ -7,4 +7,10 @@ export const heroCardMock: Props = {
   titleImg:
     "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/338EDF9EBB3599FC64A00320318B4BBE477300E4216A31A7DF0A514DE3329C03/scale?width=800&aspectRatio=1.78&format=png",
   subtitle: "All episodes now streaming",
+  info: {
+    pegi: "18+",
+    year: "2021",
+    tags: ["Action", "Adventure"],
+  },
+  displayStatus: "visible",
 };

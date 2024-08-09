@@ -3,7 +3,10 @@ import { GroupCardsCarrousel } from "./group-cards-carrousel";
 
 export const KeepWatchingCardsCarrousel = ({ cards }: Props) => {
   return (
-    <GroupCardsCarrousel cards={cards} renderCard={(item) => <KeepWatchingCard {...item} />} />
+    <GroupCardsCarrousel
+      cards={cards}
+      renderCard={(item, key) => <KeepWatchingCard {...item} key={key} />}
+    />
   );
 };
 

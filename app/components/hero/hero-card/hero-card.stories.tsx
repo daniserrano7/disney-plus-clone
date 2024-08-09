@@ -22,15 +22,30 @@ const meta: Meta<typeof HeroCard> = {
 export default meta;
 type Story = StoryObj<typeof HeroCard>;
 
-export const WithSubtitle: Story = {
+export const Default: Story = {
   args: {
     ...heroCardMock,
   },
 };
 
-export const WithoutSubtitle: Story = {
+export const WithInfo: Story = {
   args: {
     ...heroCardMock,
     subtitle: undefined,
+  },
+};
+
+export const WithSubtitle: Story = {
+  args: {
+    ...heroCardMock,
+    info: undefined,
+  },
+};
+
+export const Empty: Story = {
+  args: {
+    ...heroCardMock,
+    subtitle: undefined,
+    info: undefined,
   },
 };

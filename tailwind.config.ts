@@ -12,6 +12,7 @@ export default {
         font: {
           DEFAULT: "#f9f9f9",
           subtle: "#cacaca",
+          subtlest: "#8c8c8c",
           contrast: "#0e0b14",
         },
         elevation: {

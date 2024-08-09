@@ -4,16 +4,16 @@ import avatarImage from "public/images/avatar.png";
 
 export const UserProfile = () => {
   return (
-    <section className="hover:shadow-overlay group absolute right-0 top-0 h-full max-h-[72px] w-fit rounded border border-transparent bg-transparent p-5 pt-2 ease-linear hover:h-auto hover:max-h-[calc(100vh-40px)] hover:w-[240px] hover:border-border-subtle hover:bg-elevation-overlay hover:transition-[max-height] hover:duration-300">
+    <section className="group absolute right-0 top-0 z-50 h-full max-h-[72px] w-fit rounded border border-transparent bg-transparent p-5 pt-2 ease-linear hover:h-auto hover:max-h-[calc(100vh-40px)] hover:w-[240px] hover:border-border-subtle hover:bg-elevation-overlay hover:shadow-overlay hover:transition-[max-height] hover:duration-300">
       <div className="flex items-center justify-end">
         <p className="mr-4">Profile</p>
         <UserAvatar avatar={avatarImage} />
       </div>
       <ul className="invisible space-y-4 text-[15px] capitalize text-font-subtle opacity-0 ease-out group-hover:visible group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-300 group-hover:duration-300">
-        <div className="bg-border-subtler mb-4 mt-3 h-[1px]" />
+        <div className="mb-4 mt-3 h-[1px] bg-border-subtler" />
         <li className="hover:text-font">
           <a href="/" className="group/item flex w-full items-center gap-4">
-            <span className="bg-border-subtler group/item-hover:bg-border-subtle grid h-[48px] w-[48px] place-items-center rounded-full">
+            <span className="group/item-hover:bg-border-subtle grid h-[48px] w-[48px] place-items-center rounded-full bg-border-subtler">
               <FaPlus />
             </span>
             <span>Add profile</span>
