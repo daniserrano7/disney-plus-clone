@@ -36,7 +36,7 @@ export const KeepWatchingCard = ({
           <FaPlay size={20} className="ml-1 fill-black" />
         </span>
       </a>
-      <a href={infoUrl} className="group">
+      <a href={infoUrl} className="group hidden">
         <p className="relative mt-4 text-xs text-font-subtlest transition-all duration-200 ease-linear group-hover:text-font">
           {remainingTimeText}
         </p>

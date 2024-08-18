@@ -4,6 +4,7 @@ import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
 
 export const GroupCardsCarrousel = <T,>({ cards, component: Component }: Props<T>) => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [cardsPerSlide, setCardsPerSlide] = useState(4);
   const [isAnimating, setIsAnimating] = useState(false);
   const CARDS_SPACING = 24; // gap between cards
   const SIDE_MARGIN = 144; // margin on the sides, part of the previous/next slide shown
@@ -20,7 +21,7 @@ export const GroupCardsCarrousel = <T,>({ cards, component: Component }: Props<T
   const nextSlide = () => setCurrentStep((prev) => prev + 1);
   const previousSlide = () => setCurrentStep((prev) => prev - 1);
 
-  const containers = createCardContainers(cards, 4);
+  const containers = createCardContainers(cards, cardsPerSlide);
 
   useEffect(() => {
     setIsAnimating(true);
@@ -32,11 +33,27 @@ export const GroupCardsCarrousel = <T,>({ cards, component: Component }: Props<T
     return () => clearTimeout(timeout);
   }, [currentStep]);
 
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      console.log("window.innerWidth: ", window.innerWidth);
+      const { innerWidth } = window;
+      const newCardsPerSlide = (() => {
+        if (innerWidth < 768) return 1;
+        if (innerWidth < 768) return 2;
+        if (innerWidth < 1080) return 3;
+        return 4;
+      })();
+      setCardsPerSlide(newCardsPerSlide);
+    });
+  }, []);
+
   return (
     <div className="relative flex w-full items-center overflow-hidden pb-12 pt-3">
       <div
-        style={{ width: `calc(((100% - ${SIDE_MARGIN}px) - 16px * 3) / 4)` }}
-        className="box-border aspect-video h-auto"
+        style={{
+          width: `calc(((100% - ${SIDE_MARGIN}px) - 16px * ${cardsPerSlide - 1}) / ${cardsPerSlide})`,
+        }}
+        className="box-border hidden aspect-video h-auto"
       >
         <div className="relative box-content h-full w-[100vw]">
           <button
@@ -67,23 +84,30 @@ export const GroupCardsCarrousel = <T,>({ cards, component: Component }: Props<T
           </button>
         </div>
       </div>
-      {containers.map((cards, index) => (
-        <div
-          key={index}
-          style={{
-            left: `calc(${index - currentStep} * (100% - ${SIDE_MARGIN}px + ${CARDS_SPACING}px))`,
-            width: `calc(100% - ${SIDE_MARGIN}px)`,
-            marginLeft: `${SIDE_MARGIN / 2}px`,
-            transitionDuration: `${ANIMATION_DURATION_SECONDS}s`,
-          }}
-          className="absolute grid h-auto grid-cols-4 gap-4 ease-out"
-        >
-          {/* {cards.map((card, index) => renderCard(card, index))} */}
-          {cards.map((card, index) => (
-            <Component key={index} {...card} />
-          ))}
-        </div>
-      ))}
+      <div
+        className="w-full"
+        style={{
+          height: `calc(((100vw - ${SIDE_MARGIN / 2}px) - ${CARDS_SPACING * (cardsPerSlide - 1)}px) / ${cardsPerSlide} * 9 / 16)`,
+        }}
+      >
+        {containers.map((cards, index) => (
+          <div
+            key={index}
+            style={{
+              left: `calc(${index - currentStep} * (100% - ${SIDE_MARGIN}px + ${CARDS_SPACING}px))`,
+              width: `calc(100% - ${SIDE_MARGIN}px)`,
+              marginLeft: `${SIDE_MARGIN / 2}px`,
+              transitionDuration: `${ANIMATION_DURATION_SECONDS}s`,
+              gridTemplateColumns: `repeat(${cardsPerSlide}, minmax(0, 1fr))`,
+            }}
+            className="absolute grid h-full gap-4 ease-out"
+          >
+            {cards.map((card, index) => (
+              <Component key={index} {...card} />
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -91,5 +115,4 @@ export const GroupCardsCarrousel = <T,>({ cards, component: Component }: Props<T
 interface Props<T> {
   cards: T[];
   component: React.ComponentType<T>;
-  // renderCard: (card: T, index: number) => React.ReactNode;
 }
