@@ -27,7 +27,7 @@ export const KeepWatchingCard = ({
             >
               <div
                 style={{ width: `${progress * 100}px` }}
-                className="bg-background-action h-full rounded-full"
+                className="h-full rounded-full bg-background-action"
               />
             </div>
           ) : null}
@@ -36,7 +36,7 @@ export const KeepWatchingCard = ({
           <FaPlay size={20} className="ml-1 fill-black" />
         </span>
       </a>
-      <a href={infoUrl} className="group hidden">
+      <a href={infoUrl} className="group">
         <p className="relative mt-4 text-xs text-font-subtlest transition-all duration-200 ease-linear group-hover:text-font">
           {remainingTimeText}
         </p>
