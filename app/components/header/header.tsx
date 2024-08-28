@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { FaHouse, FaMagnifyingGlass, FaPlus, FaStar } from "react-icons/fa6";
 import { PiFilmReelFill, PiTelevisionFill } from "react-icons/pi";
 import cx from "classix";
@@ -5,13 +6,34 @@ import logo from "public/images/logo.svg";
 import { UserProfile } from "./user-profile";
 
 export const Header = () => {
+  const [isScroll, setIsScroll] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const isCurrentScroll = window.scrollY > 10;
+      const scrollIsTheSame = isCurrentScroll === isScroll;
+      if (scrollIsTheSame) return;
+
+      setIsScroll(isCurrentScroll);
+    };
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isScroll]);
+
   return (
     <header
       style={{
-        background:
-          "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.03) 15%, rgba(0, 0, 0, 0.125) 30%, rgba(0, 0, 0, 0.25) 46%, rgba(0, 0, 0, 0.4) 61%, rgba(0, 0, 0, 0.553) 75%, rgba(0, 0, 0, 0.694) 88%, rgba(0, 0, 0, 0.8))",
+        background: cx(
+          isScroll
+            ? "black"
+            : "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.03) 15%, rgba(0, 0, 0, 0.125) 30%, rgba(0, 0, 0, 0.25) 46%, rgba(0, 0, 0, 0.4) 61%, rgba(0, 0, 0, 0.553) 75%, rgba(0, 0, 0, 0.694) 88%, rgba(0, 0, 0, 0.8))",
+        ),
       }}
-      className="relative flex h-[72px] w-full items-center pl-[36px] pr-[20px]"
+      className={cx(
+        "sticky top-0 z-30 flex h-[72px] w-full items-center pl-[36px] pr-[20px] transition-all ease-linear",
+        isScroll ? "duration-150" : "duration-300",
+      )}
     >
       <a href="/" className="mr-8 block min-h-[48px] min-w-[79px]">
         <img src={logo} alt="Logo" width={79} height={48} />
