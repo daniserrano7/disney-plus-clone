@@ -10,7 +10,7 @@ const storybookPlugin = require("eslint-plugin-storybook");
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
   {
-    ignores: ["node_modules", "dist", ".cache", "build", ".storybook"],
+    ignores: ["node_modules", "dist", ".cache", "build", ".storybook", "storybook-static"],
   },
   js.configs.recommended,
   {

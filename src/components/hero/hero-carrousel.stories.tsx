@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { HeroCarrousel } from "./hero-carrousel";
 import { heroCardMock } from "./hero-card/hero-card.mock";
 

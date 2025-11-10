@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { SmallCardsCarrousel } from "@/components/group-cards-carrousel/small-cards-carrousel";
 import { smallCardMock } from "../small-card/small-card.mock";
 import { SectionWithTitle as SectionWithTitleComponent } from "./section-with-title";

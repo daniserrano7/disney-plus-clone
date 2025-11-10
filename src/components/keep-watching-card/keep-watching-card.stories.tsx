@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { KeepWatchingCard } from "./keep-watching-card";
 import { keepWatchingCardMovieMock, keepWatchingCardSerieMock } from "./keep-watching-card.mock";
 
