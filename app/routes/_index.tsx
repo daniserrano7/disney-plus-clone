@@ -1,4 +1,3 @@
-import type { MetaFunction } from "@remix-run/node";
 import { Header } from "@/components/header";
 import { HeroCarrousel } from "@/components/hero";
 import { heroCardMock } from "@/components/hero/hero-card";
@@ -12,17 +11,7 @@ import {
 } from "@/components/keep-watching-card/keep-watching-card.mock";
 import { SectionWithTitle } from "@/components/section-with-title";
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    {
-      name: "description",
-      content: "Welcome to Remix!",
-    },
-  ];
-};
-
-export default function Index() {
+export default function Home() {
   return (
     <div className="pb-8">
       <Header />

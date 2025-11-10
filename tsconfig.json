@@ -10,7 +10,6 @@
       "ES2022"
     ],
     "types": [
-      "@remix-run/node",
       "node",
       "vite/client"
     ],
