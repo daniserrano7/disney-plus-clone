@@ -2,50 +2,6 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./stories/**/*.{js,jsx,ts,tsx}"],
-  theme: {
-    fontFamily: {
-      primary: ["AvenirWorldForDisneyRegular", "system-ui", "sans-serif"],
-      bold: ["AvenirWorldForDisneyDemi", "system-ui", "sans-serif"],
-    },
-    extend: {
-      colors: {
-        font: {
-          DEFAULT: "#f9f9f9",
-          subtle: "#cacaca",
-          subtlest: "#8c8c8c",
-          contrast: "#0e0b14",
-        },
-        elevation: {
-          surface: "#1a1d29",
-          raised: "#31343e",
-          overlay: "#131313",
-        },
-        background: {
-          neutral: "#40424a",
-          "neutral-hovered": "#474a53",
-          "neutral-pressed": "#3d3f45",
-          interaction: "rgba(182, 182, 182, 0.2)",
-          "interaction-hovered": "rgba(0, 0, 0, 0.4)",
-          "interaction-pressed": "rgba(0, 0, 0, 0.8)",
-          action: "#3EABFF",
-        },
-        border: {
-          DEFAULT: "#f9f9f9",
-          subtle: "rgba(249, 249, 249, 0.2)",
-          subtler: "rgba(249, 249, 249, 0.1)",
-        },
-      },
-      borderRadius: {
-        DEFAULT: "4px",
-        lg: "8px",
-        xl: "10px",
-      },
-      boxShadow: {
-        // card: "rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px",
-        card: "0px 20px 24px 0px rgba(0, 0, 0, 0.80)",
-        overlay: "rgba(0, 0, 0, 0.5) 0px 0px 18px 0px",
-      },
-    },
-  },
-  plugins: [],
+  // Theme configuration is now in src/styles.css using @theme directive
+  // This is the Tailwind CSS v4 approach - CSS-first configuration
 } satisfies Config;

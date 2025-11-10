@@ -1,6 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@font-face {
+  font-family: "AvenirWorldForDisneyRegular";
+  src: url("../src/fonts/avenir-world-for-disney-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AvenirWorldForDisneyDemi";
+  src: url("../src/fonts/avenir-world-for-disney-demi.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Font families */
+  --font-primary: "AvenirWorldForDisneyRegular", system-ui, sans-serif;
+  --font-bold: "AvenirWorldForDisneyDemi", system-ui, sans-serif;
+
+  /* Font colors */
+  --color-font: #f9f9f9;
+  --color-font-subtle: #cacaca;
+  --color-font-subtlest: #8c8c8c;
+  --color-font-contrast: #0e0b14;
+
+  /* Elevation colors */
+  --color-elevation-surface: #1a1d29;
+  --color-elevation-raised: #31343e;
+  --color-elevation-overlay: #131313;
+
+  /* Background colors */
+  --color-background-neutral: #40424a;
+  --color-background-neutral-hovered: #474a53;
+  --color-background-neutral-pressed: #3d3f45;
+  --color-background-interaction: rgba(182, 182, 182, 0.2);
+  --color-background-interaction-hovered: rgba(0, 0, 0, 0.4);
+  --color-background-interaction-pressed: rgba(0, 0, 0, 0.8);
+  --color-background-action: #3eabff;
+
+  /* Border colors */
+  --color-border: #f9f9f9;
+  --color-border-subtle: rgba(249, 249, 249, 0.2);
+  --color-border-subtler: rgba(249, 249, 249, 0.1);
+
+  /* Border radius */
+  --radius: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+
+  /* Shadows */
+  --shadow-card: 0px 20px 24px 0px rgba(0, 0, 0, 0.80);
+  --shadow-overlay: rgba(0, 0, 0, 0.5) 0px 0px 18px 0px;
+}
 
 @layer base {
   * {
@@ -8,31 +62,18 @@
   }
 
   html {
-    @apply text-font;
-    @apply bg-elevation-surface;
+    @apply text-font bg-elevation-surface;
   }
+}
 
+@layer components {
   .font-h1 {
     @apply font-bold text-[44px] text-font;
+    font-family: var(--font-bold);
   }
 
   .font-h2 {
     @apply font-bold text-[20px] leading-6 text-font;
-  }
-
-  @font-face {
-    font-family: "AvenirWorldForDisneyRegular";
-    src: url("../src/fonts/avenir-world-for-disney-regular.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-    ffont-display: swap;
-  }
-
-  @font-face {
-    font-family: "AvenirWorldForDisneyDemi";
-    src: url("../src/fonts/avenir-world-for-disney-demi.woff2") format("woff2");
-    font-weight: bold;
-    font-style: normal;
-    ffont-display: swap;
+    font-family: var(--font-bold);
   }
 }
