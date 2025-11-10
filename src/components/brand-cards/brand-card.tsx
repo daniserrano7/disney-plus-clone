@@ -1,15 +1,15 @@
-import disneyImage from "public/images/brand-disney.png";
-import disneyVideo from "public/images/brand-disney-video.mp4";
-import pixarImage from "public/images/brand-pixar.png";
-import pixarVideo from "public/images/brand-pixar-video.mp4";
-import marvelImage from "public/images/brand-marvel.png";
-import marvelVideo from "public/images/brand-marvel-video.mp4";
-import starwarsImage from "public/images/brand-star-wars.png";
-import starwarsVideo from "public/images/brand-star-wars-video.mp4";
-import nationalGeographicImage from "public/images/brand-national-geographic.png";
-import nationalGeographicVideo from "public/images/brand-national-geographic-video.mp4";
-import starImage from "public/images/brand-star.png";
-import starVideo from "public/images/brand-star-video.mp4";
+import disneyImage from "src/images/brand-disney.png";
+import disneyVideo from "src/images/brand-disney-video.mp4";
+import pixarImage from "src/images/brand-pixar.png";
+import pixarVideo from "src/images/brand-pixar-video.mp4";
+import marvelImage from "src/images/brand-marvel.png";
+import marvelVideo from "src/images/brand-marvel-video.mp4";
+import starwarsImage from "src/images/brand-star-wars.png";
+import starwarsVideo from "src/images/brand-star-wars-video.mp4";
+import nationalGeographicImage from "src/images/brand-national-geographic.png";
+import nationalGeographicVideo from "src/images/brand-national-geographic-video.mp4";
+import starImage from "src/images/brand-star.png";
+import starVideo from "src/images/brand-star-video.mp4";
 
 const BrandCardBase = ({ url, img, alt, video }: Props) => {
   return (

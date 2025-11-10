@@ -1,6 +1,6 @@
 import * as Avatar from "@radix-ui/react-avatar";
 import { FaPlus } from "react-icons/fa6";
-import avatarImage from "public/images/avatar.png";
+import avatarImage from "src/images/avatar.png";
 
 export const UserProfile = () => {
   return (

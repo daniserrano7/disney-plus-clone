@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: ["./app/**/*.{js,jsx,ts,tsx}", "./stories/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./stories/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
       primary: ["AvenirWorldForDisneyRegular", "system-ui", "sans-serif"],

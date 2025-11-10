@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FaHouse, FaMagnifyingGlass, FaPlus, FaStar } from "react-icons/fa6";
 import { PiFilmReelFill, PiTelevisionFill } from "react-icons/pi";
 import cx from "classix";
-import logo from "public/images/logo.svg";
+import logo from "src/images/logo.svg";
 import { UserProfile } from "./user-profile";
 
 export const Header = () => {
