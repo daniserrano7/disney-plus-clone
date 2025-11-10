@@ -4,7 +4,7 @@ export const VerticalCard = ({ url, img, alt, info }: Props) => {
   return (
     <a
       href={url}
-      className="aspect-71/100 relative block rounded shadow-card outline-0 transition-transform duration-300 ease-out hover:scale-105 hover:outline-[3px] hover:outline-offset-[3px] hover:outline-border"
+      className="aspect-71/100 hover:scale-103 relative block rounded shadow-card outline-0 transition-transform duration-300 ease-out hover:outline-[3px] hover:outline-offset-[3px] hover:outline-border"
     >
       <img src={img} alt={alt} className="rounded" />
       {info ? (
