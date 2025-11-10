@@ -25,14 +25,14 @@ export const HeroCarrousel = ({ cards }: Props) => {
     return () => clearTimeout(timeout);
   }, [currentStep]);
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     const nextStep = currentStep === cards.length - 1 ? 0 : currentStep + 1;
-  //     setCurrentStep(nextStep);
-  //   }, CARROUSEL_SLIDE_DELAY_SECONDS * 1000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const nextStep = currentStep === cards.length - 1 ? 0 : currentStep + 1;
+      setCurrentStep(nextStep);
+    }, CARROUSEL_SLIDE_DELAY_SECONDS * 1000);
 
-  //   return () => clearInterval(intervalId);
-  // }, [cards, currentStep]);
+    return () => clearInterval(intervalId);
+  }, [cards, currentStep]);
 
   return (
     <div className="relative w-full overflow-x-hidden">

@@ -15,7 +15,7 @@ export const HeroCard = ({
         src={img}
         alt={alt}
         className={cx(
-          "rounded object-contain transition-transform delay-[1.2s] duration-[1.5s] ease-out",
+          "h-full w-full rounded object-cover transition-transform delay-[1.2s] duration-[1.5s] ease-out",
           displayStatus === "visible" ? "scale-100" : "scale-110",
         )}
       />
