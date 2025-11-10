@@ -6,9 +6,10 @@ export const GroupCardsCarrousel = <T,>({
   cards,
   component: Component,
   paddingBottom = 0,
+  cardsPerSlideConfig,
 }: Props<T>) => {
   const [currentStep, setCurrentStep] = useState(0);
-  const [cardsPerSlide, setCardsPerSlide] = useState(4);
+  const [cardsPerSlide, setCardsPerSlide] = useState(cardsPerSlideConfig?.default ?? 4);
   const [isAnimating, setIsAnimating] = useState(false);
   const CARDS_SPACING = 24; // gap between cards
   const SIDE_MARGIN = 144; // margin on the sides, part of the previous/next slide shown
@@ -38,17 +39,27 @@ export const GroupCardsCarrousel = <T,>({
   }, [currentStep]);
 
   useEffect(() => {
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       const { innerWidth } = window;
       const newCardsPerSlide = (() => {
+        if (cardsPerSlideConfig) {
+          if (innerWidth < 768) return cardsPerSlideConfig.mobile ?? cardsPerSlideConfig.default;
+          if (innerWidth < 1080) return cardsPerSlideConfig.tablet ?? cardsPerSlideConfig.default;
+          return cardsPerSlideConfig.desktop ?? cardsPerSlideConfig.default;
+        }
+        // Default breakpoints
         if (innerWidth < 768) return 1;
-        if (innerWidth < 768) return 2;
         if (innerWidth < 1080) return 3;
         return 4;
       })();
       setCardsPerSlide(newCardsPerSlide);
-    });
-  }, []);
+    };
+
+    handleResize(); // Call once on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [cardsPerSlideConfig]);
 
   const PreviousSlideButton = () => (
     <button
@@ -126,4 +137,10 @@ interface Props<T> {
   cards: T[];
   component: React.ComponentType<T>;
   paddingBottom?: number;
+  cardsPerSlideConfig?: {
+    default: number;
+    mobile?: number;
+    tablet?: number;
+    desktop?: number;
+  };
 }

@@ -9,6 +9,8 @@ import {
   keepWatchingCardMovieMock,
   keepWatchingCardSerieMock,
 } from "@/components/keep-watching-card/keep-watching-card.mock";
+import { VerticalCardsCarrousel } from "@/components/group-cards-carrousel/vertical-cards-carrousel";
+import { verticalCardMock } from "@/components/vertical-card/vertical-card.mock";
 import { SectionWithTitle } from "@/components/section-with-title";
 
 export default function Home() {
@@ -67,6 +69,23 @@ export default function Home() {
               keepWatchingCardSerieMock,
               keepWatchingCardMovieMock,
               keepWatchingCardSerieMock,
+            ]}
+          />
+        </SectionWithTitle>
+      </div>
+      <div className="mt-2">
+        <SectionWithTitle title="Destacados">
+          <VerticalCardsCarrousel
+            cards={[
+              verticalCardMock,
+              verticalCardMock,
+              verticalCardMock,
+              verticalCardMock,
+              verticalCardMock,
+              verticalCardMock,
+              verticalCardMock,
+              verticalCardMock,
+              verticalCardMock,
             ]}
           />
         </SectionWithTitle>
